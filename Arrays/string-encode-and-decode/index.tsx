@@ -18,11 +18,19 @@ class Solution {
    */
   decode(str: string): string[] {
     let result = Array()
-    for (let i = 0; i < str.length; i++) {
-      result.push(str[i])
+    let collectDigits = ""
+
+    let i = 0
+    while (str[i] !== "#") {
+      collectDigits += str[i]
+      i++
     }
+
+    console.log("yo", typeof Number(collectDigits))
     // str = 5#Hello5#World
     // 5# I need to skip the next 5 letters.
+    // need to check first number and #
+
     return result
   }
 }
